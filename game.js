@@ -37,7 +37,8 @@ function checkUserSequence(clickNumber, color){
         if(gamePattern.length == clickNumber)
         {
             setTimeout(() => {
-                nextColor();            
+                if(!gameOver)
+                    nextColor();            
             }, 1000);
         }
     }
