@@ -14,7 +14,10 @@ $("div.btn").on("click", function() {
     playSound(color);    
     fireAnimations(color);
 
-    checkUserSequence(++clickCount, $(this).attr("id"));
+    if(!gameOver)
+    {
+        checkUserSequence(++clickCount, $(this).attr("id"));
+    }
 });
 
 $(document).keypress(event => {
@@ -34,7 +37,7 @@ function checkUserSequence(clickNumber, color){
         if(gamePattern.length == clickNumber)
         {
             setTimeout(() => {
-                nextColor();
+                nextColor();            
             }, 1000);
         }
     }
