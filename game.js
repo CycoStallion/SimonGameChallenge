@@ -44,7 +44,9 @@ function checkUserSequence(clickNumber, color){
     }
 
     if(gameOver){
-        $('#level-title').text(`Game Over, Press A Key to Restart`);
+        var score = `Score :${gamePattern.length - 1 ? gamePattern.length - 1 : 0}`;
+        $('#score').show().text(score);
+        $('#level-title').text(`Game Over, Press the A Key to Restart.`);
         playSound('wrong');
     }
 }
@@ -71,7 +73,7 @@ function nextColor(){
 
 function startGame(){
     clickCount = 0;
-
+    $('#score').hide();
     gameOver = !gameOver;
     gamePattern = new Array();
    
